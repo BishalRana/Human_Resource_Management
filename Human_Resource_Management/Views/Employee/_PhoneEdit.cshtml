@@ -1,0 +1,40 @@
+﻿@model Human_Resource_Management.ViewModel.EmployeeViewModel
+
+<br/>
+<div>
+    @{int i = 0;}
+    @foreach (var phone in Model.PhoneNumbers)
+    {
+    <div id="phonePanel[@i]">
+        <input name='PhoneNumbers.Index' value="@i" type='hidden' />
+        <label>Phone</label>
+        <input id='Phone_[@i]__Title' type='text' name='PhoneNumbers[@i]' value=@phone />
+        @*<input id='btnAddPhone' type='button' value='Remove' onclick='removePhoneRow(@i);' />*@
+    </div>
+    i++;
+    }
+</div>
+
+
+    <script type="text/javascript">
+    function addPhoneNumbersRow()
+    {
+
+        @{
+            Model.PhoneNumbers.Add("");
+        }
+        var index = $("#divPhone").children("div").length;
+        var indexCell = "<input name='PhoneNumbers.Index' type='hidden' value='" + index + "' />";
+        var phoneCell = "<input id='Phone_[" + index + "]__Title' name='PhoneNumbers[" + index + "]' type='text' value='' />";
+        var removePhoneCell = "<input id='btnAddPhone' type='button' value='Remove' onclick='removePhoneRow(" + index + ");' />";
+        var phoneLabel = "<label>Phone</label>";
+        var newPhoneRow = "<div id='phonePanel["+index+"]'>"+indexCell +phoneLabel+ phoneCell + "</div>";
+        $("#divPhone").append(newPhoneRow);
+    }
+
+    function removePhoneRow(id)
+    {
+        var controlToBeRemoved = "#phonePanel["+id+"]";
+        $(controlToBeRemoved).remove();
+    }
+    </script>

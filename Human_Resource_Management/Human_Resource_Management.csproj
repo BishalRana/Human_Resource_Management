@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180627105517_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627111930_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627113925_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627120038_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627120520_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627121404_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627122001_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627122427_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180627122427_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180627132139_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180627132139_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180628124843_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180628134032_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180628155118_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629115057_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629121522_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629121522_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180629163914_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629163914_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ManagementContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180629165244_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629173807_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629174348_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629174852_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629175331_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629194655_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629200748_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629201242_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629201632_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629202321_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629203203_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629203648_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629204712_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629210143_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629210143_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180629212103_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629212103_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180629214548_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629214548_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180629221048_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180629221848_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180702112008_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180702112008_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180702132459_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180702211154_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180702211154_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180702220108_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180703105339_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180703105339_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180703111700_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180703111700_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ManagementContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180703114908_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180703114908_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ManagementContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180703115603_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180703115603_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ManagementContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180703124318_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180704132726_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180704132726_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180704133405_InitialCreate.cs" />
+    <Compile Remove="Controllers\EmployeeProject.cs" />
+    <Compile Remove="Migrations\20180704202647_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180717174106_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180717174106_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180717174958_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180717211059_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180718111048_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180719110932_InitialCreate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Views\Company\" />
+    <Folder Include="Views\SubCompany\" />
+    <Folder Include="Views\Project\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Views\Position\" />
+    <Folder Include="Views\Employee\" />
+    <Folder Include="Views\EmployeeProject\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\css\myStyle.css" />
+    <Content Remove="wwwroot\js\myJs.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\css\myStyle.css" />
+  </ItemGroup>
+</Project>

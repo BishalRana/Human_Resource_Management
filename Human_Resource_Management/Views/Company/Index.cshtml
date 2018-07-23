@@ -1,0 +1,78 @@
+﻿@model Human_Resource_Management.ViewModel.HomeModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="page-header">
+        <h2>All Companies</h2>
+    </div>
+</div>
+<div class="row">
+        <div class="">
+            <div class="nav navbar-nav navbar-left">
+                <div class="navbar-header">
+                    @Html.ActionLink("Create", "Create")
+                </div>
+            </div>
+        </div>    
+</div>
+@if (Model.Companies.Count == 0)
+{
+    <h3>There are no companies!!</h3>
+
+}
+else
+{
+<div style = "padding-top:10px;" class="row">
+    <div class="col-xs-12 table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Companies[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Companies[0].Chief_Executive_Officer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Companies[0].Registered_Date)
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var company in Model.Companies)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => company.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => company.Chief_Executive_Officer)
+                        </td >
+                        <td >
+                            @Html.DisplayFor(modelItem => company.Registered_Date)
+                        </td >
+                        <td>
+                            @Html.ActionLink("Sub Companies", "RouteToSubCompanyController", new { id = company.Id })|
+                            @Html.ActionLink("Edit", "Edit", new { id = company.Id })|
+                            @Html.ActionLink("Details", "Details", new { id = company.Id })|
+                            @Html.ActionLink("Delete", "Delete", new { id = company.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+}
+
+
+
+

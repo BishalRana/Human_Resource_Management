@@ -1,0 +1,68 @@
+﻿@model Human_Resource_Management.ViewModel.EmployeeViewModel
+
+@{
+    Layout = null;
+}
+
+<br/>
+<table id="tbAddress">
+    @{int i = 0;}
+    @foreach (var phone in Model.Addresses)
+    {
+        <tr id="addressPanel[@i]">
+            <td style='display:none'><input name='Addresses.Index' value="@i" type='hidden' /></td>
+            <td><input id='Addresses[@i]__Title' type='text' name='Addresses[@i]' value=@phone /></td>
+            @*<td><input id='btnAddress' type='button' value='Remove' onclick='removeAddressRow(@i);' /></td>*@
+        </tr>
+        i++;
+    }
+
+</table>
+
+
+<script language="javascript" type="text/javascript">
+    function addAddressRow()
+    {
+
+        @{
+            Model.Addresses.Add("");
+        }
+
+        var index = $("#tbAddress").children("tr").length;
+        var indexCell = "<td style='display:none'><input name='Addresses.Index' type='hidden' value='" + index + "' /></td>";
+        var addressCell = "<td><input id='Addresses" + index + "__Title' name='Addresses[" + index + "]' type='text' value='' /></td>";
+
+
+        var removeCell = "<td><input id='btnAddAddress' type='button' value='Remove' onclick='removeAddressRow(" + index + ");' /></td>";
+        var newRow = "<tr id='addressPanel" + index + "'>"  + indexCell + addressCell +"</tr>";
+        $("#tbAddress").append(newRow);
+    }
+
+    function removeAddressRow(id)
+    {
+        var controlToBeRemoved = "#addressPanel" + id;
+        $(controlToBeRemoved).remove();
+    }
+
+    function addNewAddress()
+    {
+
+        @{
+            Model.Addresses.Add("");
+        }
+        var url = "AddNewAddress";
+            $.post({
+                url: url,
+                success: function (result) {
+                    $('#tbAddress').html(result);
+                },
+                error: function () {
+                    alert("Error occured");
+                }
+            });
+    }
+</script>
+
+
+
+

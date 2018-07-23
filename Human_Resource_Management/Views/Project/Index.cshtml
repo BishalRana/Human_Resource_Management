@@ -1,0 +1,64 @@
+﻿@model Human_Resource_Management.ViewModel.ProjectViewModel
+
+@{
+    ViewBag.Title = "Project Page";
+}
+<div class="row">
+    <div class="page-header">
+        <h2>Project</h2>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <div class="nav navbar-nav navbar-left">
+            <div class="navbar-header btn">
+                @Html.ActionLink("Create", "Create")
+            </div>
+        </div>
+    </div>
+</div>
+@if(Model.Projects.Count == 0)
+{
+<h3>There are no projects!!</h3>
+}
+else
+{
+<div style="padding-top:10px;" class="row">
+    <div class="col-xs-12 table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                   
+                    <th>
+                        Project Name
+                    </th>
+                    <th>
+                        Project Claimed By
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var project in Model.Projects)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => project.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => project.SubCompany.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = project._PjtId })|
+                        @Html.ActionLink("Details", "Details", new { id = project._PjtId})|
+                        @Html.ActionLink("Delete", "Delete", new { id = project._PjtId })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+}

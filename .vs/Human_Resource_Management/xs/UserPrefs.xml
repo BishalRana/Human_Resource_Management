@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{00371E5B-05F7-4C39-9F4E-211CBFD7643D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Human_Resource_Management/ViewModel/EmployeeViewModel.cs">
+    <Files>
+      <File FileName="Human_Resource_Management/Views/Employee/Edit.cshtml" Line="72" Column="19" />
+      <File FileName="Human_Resource_Management/ViewModel/EmployeeViewModel.cs" Line="37" Column="81" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Human__Resource__Management PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

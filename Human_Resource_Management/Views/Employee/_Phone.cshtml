@@ -1,0 +1,73 @@
+﻿@model Human_Resource_Management.ViewModel.EmployeeViewModel
+
+@{
+    Layout = null;
+}
+
+<br/>
+<table id="tbPhoneNumbers">
+    @{int i = 0;}
+    @foreach (var phone in Model.PhoneNumbers)
+    {
+    <tr id="phonePanel[@i]">
+        <td style='display:none'><input name='PhoneNumbers.Index' value="@i" type='hidden' /></td>
+        <td><input id='Phone_[@i]__Title' type='text' name='PhoneNumbers[@i]' value=@phone /></td> 
+        @*<td><input id='btnPhone' type='button' value='Remove' onclick='removePhoneRow(@i);' /></td>*@
+    </tr>
+    i++;
+    }
+</table>
+
+<script language="javascript" type="text/javascript">
+function addPhoneNumbersRow() {
+
+        @{
+            Model.PhoneNumbers.Add("");
+        }
+
+        var index = $("#tbPhoneNumbers").children("tr").length;
+        var indexCell = "<td style='display:none'><input name='PhoneNumbers.Index' type='hidden' value='" + index + "' /></td>";
+        var phoneCell = "<td><input id='Phone_" + index + "__Title' name='PhoneNumbers[" + index + "]' type='text' value='' /></td>";
+
+
+        var removeCell = "<td><input id='btnPhone' type='button' value='Remove' onclick='removePhoneRow(" + index + ");' /></td>";
+
+        var newPhoneRow = "<tr id='trPhone" + index + "'>"  + indexCell + phoneCell +"</tr>";
+        $("#tbPhoneNumbers").append(newPhoneRow);
+}
+
+function removePhoneRow(id) 
+{
+        var controlToBeRemoved = "#phonePanel" + id;
+        $(controlToBeRemoved).remove();
+}
+function removeAddress() {
+        var url = "RemoveNewAddress";
+        $.post({
+            url: url,
+            success: function(result) {
+                $('#tbAddress').html(result);
+            },
+            error: function() {
+                alert("Error occured");
+            }
+        });
+}
+function addNewAddress() {
+
+        @{
+            Model.Addresses.Add("");
+        }
+        var url = "AddNewAddress";
+        $.post({
+            url: url,
+            success: function(result) {
+                $('#tbAddress').html(result);
+            },
+            error: function() {
+                alert("Error occured");
+            }
+        });
+}</script>
+
+

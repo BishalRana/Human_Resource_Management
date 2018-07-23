@@ -1,0 +1,11 @@
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/bin/Debug/netcoreapp2.0/Human_Resource_Management.deps.json
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/bin/Debug/netcoreapp2.0/Human_Resource_Management.runtimeconfig.json
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/bin/Debug/netcoreapp2.0/Human_Resource_Management.runtimeconfig.dev.json
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/bin/Debug/netcoreapp2.0/Human_Resource_Management.dll
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/bin/Debug/netcoreapp2.0/Human_Resource_Management.pdb
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/obj/Debug/netcoreapp2.0/Human_Resource_Management.csproj.CoreCompileInputs.cache
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/obj/Debug/netcoreapp2.0/Human_Resource_Management.AssemblyInfoInputs.cache
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/obj/Debug/netcoreapp2.0/Human_Resource_Management.AssemblyInfo.cs
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/obj/Debug/netcoreapp2.0/Human_Resource_Management.dll
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/obj/Debug/netcoreapp2.0/Human_Resource_Management.pdb
+/Users/bishalrana/Projects/Human_Resource_Management/Human_Resource_Management/obj/Debug/netcoreapp2.0/Human_Resource_Management.csprojResolveAssemblyReference.cache

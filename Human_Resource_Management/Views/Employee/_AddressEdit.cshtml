@@ -1,0 +1,35 @@
+﻿@model Human_Resource_Management.ViewModel.EmployeeViewModel
+
+<br/>
+@{int i = 0;}
+@foreach (var address in Model.Addresses)
+{
+<div id="addressPanel[@i]">
+    <input name='Addresses.Index' value="@i" type='hidden' />
+    <label>Address</label>
+    <input id='Address_[@i]__Input' type='text' name='Addresses[@i]' value=@address />
+    @*<input id='btnRemoveAddress' type='button' value='Remove' onclick='removeAddressRow(@i);' />*@
+</div>
+    i++;
+}
+
+<script type="text/javascript">
+function addAddressRow() {
+
+        @{
+            Model.Addresses.Add("");
+        }
+        var index = $("#divAddress").children("div").length;
+        var indexCell = "<input name='Addresses.Index' type='hidden' value='" + index + "' />";
+        var addressCell = "<input id='Address_[" + index + "]__Input' name='Addresses[" + index + "]' type='text' value='' />";
+        var removeAddressCell = "<input id='btnRemoveAddress' type='button' value='Remove' onclick='removeAddressRow(" + index + ");' />";
+        var addressLabel = "<label>Address</label>";
+        var newAddressRow = "<div id='addressPanel[" + index + "]'>" +addressLabel+ indexCell + addressCell  + "</div>";
+        $("#divAddress").append(newAddressRow);
+}
+
+function removeAddressRow(id)
+{
+        var controlToBeRemoved = "#addressPanel[" + id + "]";
+        $(controlToBeRemoved).remove();
+}</script>

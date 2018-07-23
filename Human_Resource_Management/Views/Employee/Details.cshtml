@@ -1,0 +1,87 @@
+﻿@model Human_Resource_Management.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="row">
+    <div class="page-header">
+        <h2>Employee Information</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-11">
+        <dl class="dl-horizontal">
+            <dt>
+                Employee
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+
+            </dd>
+            <dt>
+                Position
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Positions.Position_Type)
+            </dd>
+            <dt>
+                Salary
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Salary)
+            </dd>
+            <dt>
+                Joined Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Joined_Date)
+            </dd>
+            <dt>
+                Sub Company
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SubCompany.Name)
+            </dd>
+            <dt>
+                Address
+            </dt>
+            <dd>
+                @foreach (var address in Model.Addresses)
+                {
+                    <div>
+                        @address.Location
+                    </div>
+
+                }
+            </dd>
+            <dt>
+                Phones
+            </dt>
+            <dd>
+                @foreach(var phone in Model.Phones)
+                {
+                    <div>
+                        @phone.Phone_Number
+                    </div>
+                }
+            </dd>
+            <dt>
+                Projects
+            </dt>
+            <dd>
+                @foreach(var empPjt in Model.EmployeeProjects)
+                {
+                <div>
+                    @empPjt.Project.Name
+                </div>
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="row" style="padding-top:20px;">
+    <div class="col-sm-offset-1 col-sm-11" style="padding-top:10px;">
+        @Html.ActionLink("Edit Record", "Edit", new { id = Model._EmpId }) |
+        @Html.ActionLink("Back to Employee(s)", "Index")
+    </div>
+</div>

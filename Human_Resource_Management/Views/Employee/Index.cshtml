@@ -1,0 +1,98 @@
+﻿@model Human_Resource_Management.ViewModel.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Employee";
+}
+
+<div class="row">
+    <div class="page-header">
+        <h2>Employee</h2>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+<div class="row">
+
+    <div class="col-md-6 col-sm-10 col-xs-11">
+        <div class="btn btn-default">
+            Sub Company: @Html.DropDownList("subCompany", "All")
+            Position: @Html.DropDownList("position", "All")
+            <input type="submit" value="Filter" />
+        </div>
+        <br />
+        <br/>
+        <div class="nav navbar-nav navbar-left">
+            <div class="navbar-header">
+                @Html.ActionLink("Create", "Create")
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+}
+
+@if (Model.Employees.Count == 0)
+{
+<h3>There are no employees!!</h3>
+}
+else
+{
+<div style="padding-top:10px;" class="row">
+    <div class="col-xs-12 table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employees[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employees[0].Salary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employees[0].Joined_Date)
+                    </th>
+                    <th>
+                        Position
+                    </th>
+                    <th>
+                        Sub Company
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model.Employees)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => employee.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => employee.Salary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => employee.Joined_Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => employee.Positions.Position_Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => employee.SubCompany.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = employee._EmpId })|
+                        @Html.ActionLink("Details", "Details", new { id = employee._EmpId})|
+                        @Html.ActionLink("Delete", "Delete", new { id = employee._EmpId })
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+}

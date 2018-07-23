@@ -1,0 +1,53 @@
+﻿@model Human_Resource_Management.Models.Project
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="row">
+    <div class="page-header">
+        <h2>Delete</h2>
+    </div>
+</div>
+<h3>Are you sure you want to delete this?</h3>
+<div class="row">
+    @if (ViewBag.Message != null)
+    {
+    <div>
+        <div class="col-md-offset-1 col-md-6 .col-md-offset-5 alert alert-danger" role="alert">
+            @Html.DisplayText("Message")
+        </div>
+    </div>
+    }
+    <div class="col-sm-11">
+        <dl class="dl-horizontal">
+            <dt>
+               Project Name
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+               Project Claim By
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SubCompany.Name)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div class="row">
+    <div class="col-sm-offset-1 col-sm-11" style="padding-top:10px;">
+        @Html.ActionLink("Back to Project List", "Index")
+    </div>
+</div>

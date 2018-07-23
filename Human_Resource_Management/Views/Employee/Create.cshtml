@@ -1,0 +1,111 @@
+﻿@model Human_Resource_Management.ViewModel.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+<div class="row">
+    <div class="page-header">
+        <h2>Employee</h2>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class=" row form-horizontal">
+        <br />
+        @if (ViewBag.Message != null)
+        {
+            <div class=" form-group ">
+                <div class="col-md-offset-2 col-md-6 .col-md-offset-4 alert alert-danger" role="alert">
+                    @Html.DisplayText("Message")
+                </div>
+            </div>
+        }
+
+        <div class=form-group>
+            @Html.LabelFor(m => m.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.EditorFor(m => m.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class=form-group>
+            @Html.LabelFor(m => m.Joined_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.EditorFor(m => m.Joined_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Joined_Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class=form-group>
+            @Html.LabelFor(m => m._Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.EditorFor(m => m._Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model._Address, "", new { @class = "text-danger" })
+                <br />
+
+                <div class="panel panel-default">
+                    <div class=panel-body>
+                        <input id="btnAddAddresses" type="button" onclick="addAddressRow()" value="Add Optional Addresses" />
+                        @{Html.RenderPartial("_Address");}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=form-group>
+            @Html.LabelFor(m => m._PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.EditorFor(m => m._PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model._PhoneNumber, "", new { @class = "text-danger" })
+                <br />
+                <div class="panel panel-default">                   
+                    <div class="panel-body">
+                        <input id="btnAddPhone" type="button" onclick="addPhoneNumbersRow()" value="Add Optional Phone Number" />
+                        @{Html.RenderPartial("_Phone");}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=form-group>
+            @Html.LabelFor(m => m.NameOfSubCompany, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.DropDownListFor(model => model.SubCompanyId, ViewBag.SubCompanies as List<SelectListItem>
+                                                    , "-Select Sub Company-", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SubCompanyId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class=form-group>
+            @Html.LabelFor(m => m.Position_Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.DropDownListFor(model => model.PositionId, ViewBag.Positions as List<SelectListItem>
+                                       , "-Select Position-", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PositionId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class=form-group>
+            @Html.LabelFor(m => m.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6 .col-md-offset-4">
+                @Html.EditorFor(m => m.Salary, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+    <br/>
+    <div class="row">
+        <div  class="col-md-offset-2 col-md-10" >
+            @Html.ActionLink("Back to Employee(s)", "Index")
+        </div>                    
+    </div>
